@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { addBucket } from './store/slice/bucketSlice'
 import { useDispatch } from 'react-redux'
+import VideoModal from './components/videoPlayer'
 import { useSelector } from 'react-redux'
 import './App.css'
 import { Bucket } from './components/bucket' 
@@ -16,7 +17,6 @@ function App() {
    
   return (
     <div >
-      
       {
         myState.map((bucket,key)=>{
           return <Bucket id={key} key={key} />
