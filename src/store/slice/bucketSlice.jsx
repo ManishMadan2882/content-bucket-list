@@ -1,5 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
-import { v4 as uuidv4 } from 'uuid';
+
+const idGenerator=()=>{
+    return Math.floor(Math.random() * 1001);
+}
 
 const bucketSlice = createSlice({
     name:"buckets",
@@ -8,7 +11,7 @@ const bucketSlice = createSlice({
 
         addBucket(state,action){
             state.push({
-                id:uuidv4(),
+                id:idGenerator(),
                 title:"",
                 list:[
                  {
@@ -24,7 +27,7 @@ const bucketSlice = createSlice({
         {
             let parent = action.payload.parentId;
             state[parent].list.push({
-                id:uuidv4(),
+                id:idGenerator(),
                 title:'',
                 url:''
             })
@@ -33,6 +36,7 @@ const bucketSlice = createSlice({
         updateCard(state,action){
             state[action.payload.parentId].list[action.payload.cardId].title = action.payload.title;
             state[action.payload.parentId].list[action.payload.cardId].url = action.payload.url;
+            
         },
         
         removeBucket(state,action){
