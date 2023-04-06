@@ -26,7 +26,7 @@ export const Bucket = (props) => {
   
   return (
 
-    <div className="flex flex-wrap justify-center my-2 ">
+    <div className="flex flex-wrap justify-center my-2 drop-shadow-2xl">
   
     <div className=' bg-cyan-200 p-4  w-11/12 rounded-xl'>
     <div className='block w-full'>

@@ -13,7 +13,6 @@ function VideoModal(props) {
   const handleCloseModal = () => {
     setModalOpen(false);
   };
-console.log(props.url);
   return (
     <>  
       <button className='hover:bg-sky-100 rounded-full w-7' onClick={handleOpenModal}><img src={playIcon}/></button>

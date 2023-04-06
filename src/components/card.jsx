@@ -1,7 +1,6 @@
 import { useState,useEffect,React } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import deleteIcon from '../assets/del.png'
-import playButton from '../assets/play-button.png'
 import VideoModal from './videoPlayer'
 import { updateCard,removeCard} from '../store/slice/bucketSlice'
 
@@ -25,9 +24,7 @@ const deleteCard=(eve)=>{
   parentId:props.parentId
  }))
 }
- const launchVideo=()=>{
-  return <VideoModal url={url}/>
- }
+
  
   useEffect(()=>{
     dispatch(updateCard(

@@ -3,10 +3,15 @@ import {createSlice} from '@reduxjs/toolkit'
 const idGenerator=()=>{
     return Math.floor(Math.random() * 100000+1);
 }
+async function fetchData() {
+    const response = await fetch('http://localhost:3000/data/10000000');
+    const data = await response.json();
+    return data.buckets;
+  }
 
 const bucketSlice = createSlice({
     name:"buckets",
-    initialState:[],
+    initialState: await fetchData(),
     reducers:{
 
         addBucket(state,action){
@@ -21,6 +26,7 @@ const bucketSlice = createSlice({
                  }
                 ]
               })
+              
         },
         
         addCard(state,action)
@@ -31,6 +37,7 @@ const bucketSlice = createSlice({
                 title:'',
                 url:''
             })
+            return state
         },
         
         updateCard(state,action){
