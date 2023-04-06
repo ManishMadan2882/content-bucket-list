@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 const idGenerator=()=>{
-    return Math.floor(Math.random() * 1001);
+    return Math.floor(Math.random() * 100000+1);
 }
 
 const bucketSlice = createSlice({
