@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start:server": "json-server --watch db.json",
+    "start": "node server",
     "dev": "vite",
-    "build": "vite build && node server",
+    "build": "vite build ",
     "preview": "vite preview"
   },
   "dependencies": {
