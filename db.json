@@ -1,0 +1,36 @@
+{
+  "buckets": [
+    {
+      "arr": [
+        {
+          "id": 90536,
+          "title": "Entertainment",
+          "list": [
+            {
+              "id": 0,
+              "title": "Our Universe:Netflix",
+              "url": "https://www.youtube.com/watch?v=Q33TkQKlIMg"
+            },
+            {
+              "id": 45788,
+              "title": "Alaska: 8K",
+              "url": "https://www.youtube.com/watch?v=CHSnz0bCaUk&t=114s"
+            }
+          ]
+        },
+        {
+          "id": 32606,
+          "title": "Eduacation",
+          "list": [
+            {
+              "id": 0,
+              "title": "Next.JS",
+              "url": "https://www.youtube.com/watch?v=Y6KDk5iyrYE"
+            }
+          ]
+        }
+      ],
+      "id": 0
+    }
+  ]
+}

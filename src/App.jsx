@@ -1,12 +1,15 @@
-import React,{useEffect} from 'react'
-import { addBucket } from './store/slice/bucketSlice'
+import React,{useEffect,useState} from 'react'
+import { addBucket, initState} from './store/slice/bucketSlice'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import './App.css'
 import { Bucket } from './components/bucket' 
 
 function App() {
+  const [loaded,setLoaded] = useState(false);
   const dispatch  = useDispatch();
+   
+  
   const addNewBucket = (payload)=>{
 
     dispatch(addBucket())
@@ -16,16 +19,31 @@ function App() {
     return state.buckets
   })
   useEffect(()=>{
-fetch('http://localhost:3000/data/10000000', {
+if(loaded)
+{
+  fetch('http://localhost:3000/buckets/0', {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify({buckets:myState})
+  body: JSON.stringify({arr : myState})
 })
   .then(response => response.json())
   .catch(error => console.error(error));
-  })
+  }
+  else
+  {
+    fetch('http://localhost:3000/buckets/0')
+   .then(response => response.json())
+   .then((data) => {
+    console.log(data);
+    setLoaded(true)
+      dispatch(initState(data.arr))
+    })
+  .catch(error => console.error(error));  
+  }
+}
+  )
 
   console.log(myState)
   return (
