@@ -69,9 +69,9 @@ if(loaded)
       
       :
       <ClimbingBoxLoader
+        className='absolute mx-auto mt-[20%] '
         color='#36d7b7'
-        loading={loaded}
-        size={150}
+        size={25}
         aria-label="Loading Spinner"
         data-testid="loader"
       />
