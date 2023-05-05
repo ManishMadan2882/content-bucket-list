@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "node server",
+    "start:server": "json-server --watch db.json",
     "dev": "vite",
-    "build": "vite build ",
+    "build": "vite build && node server",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -17,7 +17,8 @@
     "react-icons": "^4.8.0",
     "react-modal": "^3.16.1",
     "react-player": "^2.12.0",
-    "react-redux": "^8.0.5"
+    "react-redux": "^8.0.5",
+    "react-spinners": "^0.13.8"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
