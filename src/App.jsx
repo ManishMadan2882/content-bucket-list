@@ -22,7 +22,7 @@ function App() {
   useEffect(()=>{
 if(loaded)
 {
-  fetch('http://localhost:3000/buckets/0', {
+  fetch('https://contentbucket.onrender.com/buckets/0', {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ if(loaded)
   else
   {
     
-    fetch('http://localhost:3000/buckets/0')
+    fetch('https://contentbucket.onrender.com/buckets/0')
    .then(response => response.json())
    .then((data) => {
     console.log(data);
